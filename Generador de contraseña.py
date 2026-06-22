@@ -1,4 +1,4 @@
-"""usuarios = {}
+usuarios = {}
 
 def crear_cuenta():
     print("\nCREAR CUENTA")
@@ -41,49 +41,4 @@ while True:
         print("Saliendo...")
         break
     else:
-        print("Opción incorrecta.")"""
-
-
-import random
-import string
-
-def generar_contrasena(longitud, mayusculas=True, minusculas=True, numeros=True, simbolos=True):
-    caracteres = ""
-
-    if mayusculas:
-        caracteres += string.ascii_uppercase
-    if minusculas:
-        caracteres += string.ascii_lowercase
-    if numeros:
-        caracteres += string.digits
-    if simbolos:
-        caracteres += "!@#$%^&*"
-
-    if caracteres == "":
-        return "Error: debes seleccionar al menos un tipo de carácter."
-
-    contrasena = ""
-    for i in range(longitud):
-        contrasena += random.choice(caracteres)
-
-    return contrasena
-
-
-print("GENERADOR DE CONTRASEÑAS")
-
-longitud = int(input("Ingrese la longitud de la contraseña: "))
-
-usar_mayusculas = input("¿Incluir mayúsculas? (si/no): ") == "si"
-usar_minusculas = input("¿Incluir minúsculas? (si/no): ") == "si"
-usar_numeros = input("¿Incluir números? (si/no): ") == "si"
-usar_simbolos = input("¿Incluir símbolos? (si/no): ") == "si"
-
-contrasena = generar_contrasena(
-    longitud,
-    usar_mayusculas,
-    usar_minusculas,
-    usar_numeros,
-    usar_simbolos
-)
-
-print("Contraseña generada:", contrasena)
+        print("Opción incorrecta.")
